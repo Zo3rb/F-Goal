@@ -11,7 +11,7 @@ class Post(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    category = db.relationship('Category', backref=db.backref('posts', lazy=True))
+    category = db.relationship('Category', backref=db.backref('categories', lazy=True))
 
     def to_dict(self):
         return {

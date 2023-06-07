@@ -10,8 +10,8 @@ class Like(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    user = db.relationship('User', backref=db.backref('likes', lazy=True))
-    post = db.relationship('Post', backref=db.backref('likes', lazy=True))
+    user = db.relationship('User', backref=db.backref('users', lazy=True))
+    post = db.relationship('Post', backref=db.backref('posts', lazy=True))
 
     def to_dict(self):
         return {

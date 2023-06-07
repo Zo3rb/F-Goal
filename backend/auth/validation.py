@@ -1,5 +1,3 @@
-from email_validator import validate_email
-
 register_schema = {
     "type": "object",
     "properties": {

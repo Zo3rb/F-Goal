@@ -36,7 +36,7 @@ def register():
     if email_taken:
         return jsonify({'error': 'Email is already taken'}), HTTP_400_BAD_REQUEST
     
-    user = User(username=data['username'], email=data['email'], password=data['password'])
+    user = User(username=data['username'], email=data['email'], password=data['password'], isAdmin=0)
     db.session.add(user)
     db.session.commit()
     

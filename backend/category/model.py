@@ -5,11 +5,9 @@ from backend import db
 class Category(db.Model):
     """Category Model/Class/Entity"""
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(45), nullable=False)
+    name = db.Column(db.String(45), nullable=False, unique=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-
-    category = db.relationship('Category', backref=db.backref('posts', lazy=True))
 
     def to_dict(self):
         return {

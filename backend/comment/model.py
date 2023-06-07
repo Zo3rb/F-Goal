@@ -11,8 +11,8 @@ class Comment(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    post = db.relationship('Post', backref=db.backref('comments', lazy=True))
-    user = db.relationship('User', backref=db.backref('comments', lazy=True))
+    post = db.relationship('Post', backref=db.backref('posts', lazy=True))
+    user = db.relationship('User', backref=db.backref('users', lazy=True))
 
     def to_dict(self):
         return {

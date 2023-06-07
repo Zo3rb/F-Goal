@@ -17,7 +17,9 @@ def create_app(initial_config=Config):
     JWTManager(app)
 
     from backend.auth.route import auth
+    from backend.category.route import category
 
     app.register_blueprint(auth)
+    app.register_blueprint(category)
 
     return app
