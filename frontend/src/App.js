@@ -1,22 +1,7 @@
-import { useState, useEffect } from "react";
+import AppRouter from "./AppRouter";
 
 function App() {
-  const [msg, setMsg] = useState("None");
-
-  useEffect(() => {
-    fetch("/api/health-check")
-      .then((response) => response.json())
-      .then((data) => setMsg(data.message));
-  }, []);
-
-  console.log(msg);
-
-  return (
-    <div>
-      <header>Hello, World From New React Application</header>
-      {msg}
-    </div>
-  );
+  return <AppRouter />;
 }
 
 export default App;
